@@ -2,7 +2,7 @@ const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
 const app = express()
-
+require.apply('dotenv').config();
 const userRoute = require('./app/api/routes/user')
 
 const mongoose = require('mongoose')
@@ -37,6 +37,6 @@ mongoose.connect(mongoURI)
     console.log(err);
 })
 
-app.listen(5400,()=>{
+app.listen(80,()=>{
     console.log("Successfully running on port number");
 })
